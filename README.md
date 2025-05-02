@@ -1,4 +1,4 @@
-# Stop-Timer
+# Non-Stopwatch
 
 A dead-simple time-tracking tool.
 
