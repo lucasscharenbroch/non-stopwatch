@@ -1,9 +1,16 @@
 <!-- Main View With Buttons -->
 <script setup lang="ts">
+import {type Sink} from '../models/time.ts'
+import SinkButtons from '@/components/SinkButtons.vue';
+
+const sinks: Sink[] = [
+	"afk", "work", "play", "meeting", "coding", "ricing", "break"
+].map(s => ({name: s}));
+
 </script>
 
 <template>
-	<p>this is where the buttons go</p>
+	<SinkButtons :sinks />
 </template>
 
 <style scoped>
