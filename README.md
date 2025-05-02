@@ -1,2 +1,5 @@
-# stop-timer
-Stopwatch/timer time-tracking tool
+# Stop-Timer
+
+A dead-simple time-tracking tool.
+
+Kind of resembles a chess timer: the clock starts, and runs continuously then you toggle between modes.
