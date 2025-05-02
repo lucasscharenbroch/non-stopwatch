@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import TimerView from './views/TimerView.vue';
+import Navbar from './components/NavBar.vue';
 
 </script>
 
 <template>
+  <Navbar />
+
   <main>
-    <TimerView></TimerView>
+    <RouterView />
   </main>
 </template>
 
