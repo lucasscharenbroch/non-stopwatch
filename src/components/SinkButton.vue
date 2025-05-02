@@ -2,7 +2,7 @@
 import { DEFAULT_COLORS } from '@/utils/color.ts';
 import { type Sink } from '../models/time.ts'
 
-const props = defineProps<{sink: Sink, i: number}>();
+const props = defineProps<{sink: Sink, i: number, active: boolean}>();
 const backgroundColor =
 props.sink.colorHex ?? DEFAULT_COLORS[props.i % DEFAULT_COLORS.length];
 const style = {backgroundColor};
@@ -10,7 +10,7 @@ const style = {backgroundColor};
 </script>
 
 <template>
-    <button :style>{{ props.sink.name }}</button>
+    <button :style :class="{unfocus: !active}">{{ props.sink.name }}</button>
 </template>
 
 <style scoped>
@@ -24,8 +24,15 @@ button {
   transition: all 0.2s ease;
 }
 
+button.unfocus {
+    filter: brightness(25%);
+}
+
 button:hover {
     transform: scale(1.05);
+}
+
+button.unfocus:hover {
     filter: brightness(75%);
 }
 </style>
