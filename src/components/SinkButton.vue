@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { DEFAULT_COLORS } from '@/utils/color.ts';
-import { type Sink } from '../models/time.ts'
+import { type Sink } from '../models/Sink.ts';
 
-const props = defineProps<{sink: Sink, i: number, active: boolean}>();
-const backgroundColor =
-props.sink.colorHex ?? DEFAULT_COLORS[props.i % DEFAULT_COLORS.length];
-const style = {backgroundColor};
-
+const props = defineProps<{ sink: Sink; i: number; active: boolean }>();
+const backgroundColor = props.sink.colorHex ?? DEFAULT_COLORS[props.i % DEFAULT_COLORS.length];
+const style = { backgroundColor };
 </script>
 
 <template>
-    <button :style :class="{unfocus: !active}">{{ props.sink.name }}</button>
+  <button :style :class="{ unfocus: !active }">{{ props.sink.name }}</button>
 </template>
 
 <style scoped>
@@ -25,14 +23,14 @@ button {
 }
 
 button.unfocus {
-    filter: brightness(25%);
+  filter: brightness(25%);
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 button.unfocus:hover {
-    filter: brightness(75%);
+  filter: brightness(75%);
 }
 </style>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { type Sink } from '../models/time.ts'
-import SinkButton from './SinkButton.vue'
+import { type Sink } from '../models/Sink.ts';
+import SinkButton from './SinkButton.vue';
 
-const props = defineProps<{ sinks: Sink[] }>()
-const focusedSink = defineModel<string>()
+const props = defineProps<{ sinks: Sink[] }>();
+const focusedSink = defineModel<string>();
 </script>
 
 <template>
