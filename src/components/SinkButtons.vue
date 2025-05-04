@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Sink } from '../models/Sink.ts';
+import { type Sink } from '../models/sink.ts';
 import SinkButton from './SinkButton.vue';
 
 const props = defineProps<{ sinks: Sink[] }>();

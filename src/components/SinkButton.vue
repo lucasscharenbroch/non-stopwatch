@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { DEFAULT_COLORS } from '@/utils/color.ts';
-import { type Sink } from '../models/Sink.ts';
+import { type Sink } from '../models/sink.ts';
 
 const props = defineProps<{ sink: Sink; i: number; active: boolean }>();
 const backgroundColor = props.sink.colorHex ?? DEFAULT_COLORS[props.i % DEFAULT_COLORS.length];

@@ -6,7 +6,7 @@ export type HistoryEntry = {
 };
 
 export const history = ref<Array<HistoryEntry>>([]);
-export const totalTicks = ref<number>(3590); // could be computed as sum of history, but this is "more efficient"
+export const totalTicks = ref<number>(0); // could be computed as sum of history, but this is "more efficient"
 
 const addTickToHistory = (sinkName: string) => {
   if (history.value.length !== 0 && history.value[history.value.length - 1].sinkName === sinkName) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { history } from '@/stores/TrackingStore';
+import { history } from '@/stores/trackingStore';
 import HistoryDisplayEntry from './HistoryDisplayEntry.vue';
 </script>
 

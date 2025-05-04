@@ -1,10 +1,10 @@
 <!-- Main View With Buttons -->
 <script setup lang="ts">
 import { ref } from 'vue';
-import { type Sink } from '../models/Sink.ts';
+import { type Sink } from '../models/sink.ts';
 import SinkButtons from '@/components/SinkButtons.vue';
 import { useIntervalFn } from '@vueuse/core';
-import { recordTick, totalTicks } from '@/stores/TrackingStore.ts';
+import { recordTick, totalTicks } from '@/stores/trackingStore.ts';
 import StopwatchDisplay from '@/components/StopwatchDisplay.vue';
 import HistoryDisplay from '@/components/HistoryDisplay.vue';
 

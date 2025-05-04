@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HistoryEntry } from '@/stores/TrackingStore';
+import type { HistoryEntry } from '@/stores/trackingStore';
 import StopwatchDisplay from './StopwatchDisplay.vue';
 
 const props = defineProps<{ entry: HistoryEntry }>();
