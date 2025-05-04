@@ -14,7 +14,7 @@ const style = { backgroundColor };
 <style scoped>
 button {
   aspect-ratio: 1 / 1;
-  width: 100%;
+  height: 1fr;
   font-size: 1.2rem;
   border: 2px solid #444;
   border-radius: 12px;

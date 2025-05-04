@@ -19,7 +19,7 @@ const { pause, resume, isActive } = useIntervalFn(onTick, 1000);
 </script>
 
 <template>
-  <SinkButtons :sinks="prefSinks" v-model="focusedSink" />
+  <SinkButtons style="height: 80vh" :sinks="prefSinks" v-model="focusedSink" />
   <StopwatchDisplay :n-ticks="totalTicks" />
   <HistoryDisplay :max-entries="1"></HistoryDisplay>
 </template>

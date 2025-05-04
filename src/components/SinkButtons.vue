@@ -28,10 +28,17 @@ const focusedSink = defineModel<string>();
 <style scoped>
 section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
   gap: 1rem;
   padding: 1rem;
   height: 100%;
   box-sizing: border-box;
+}
+
+@media (max-aspect-ratio: 2/3) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
