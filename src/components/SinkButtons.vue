@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { setMostRecentSink } from '@/stores/trackingStore.ts';
 import { type Sink } from '../models/sink.ts';
 import SinkButton from './SinkButton.vue';
 
@@ -14,7 +15,12 @@ const focusedSink = defineModel<string>();
       :key="sink.name"
       :i
       :active="focusedSink === sink.name"
-      @click="() => (focusedSink = sink.name)"
+      @click="
+        () => {
+          focusedSink = sink.name;
+          setMostRecentSink(sink.name);
+        }
+      "
     ></SinkButton>
   </section>
 </template>

@@ -23,17 +23,19 @@ const collapsedTicks = computed(
 <template>
   <ul>
     <HistoryDisplayEntry v-for="(entry, i) in displayedHistoryEntries" :key="i" :entry />
-  </ul>
-  <details>
-    <summary>
-      (... and {{ formatTicksAsTime(collapsedTicks, prefShowSeconds) }} more across
-      {{ collapsedHistoryEntries.length }} entries)
-    </summary>
+    <li>
+      <details>
+        <summary>
+          (... and {{ formatTicksAsTime(collapsedTicks, prefShowSeconds) }} more across
+          {{ collapsedHistoryEntries.length }} entries)
+        </summary>
 
-    <ul>
-      <HistoryDisplayEntry v-for="(entry, i) in collapsedHistoryEntries" :key="i" :entry />
-    </ul>
-  </details>
+        <ul>
+          <HistoryDisplayEntry v-for="(entry, i) in collapsedHistoryEntries" :key="i" :entry />
+        </ul>
+      </details>
+    </li>
+  </ul>
 </template>
 
 <style scoped></style>
