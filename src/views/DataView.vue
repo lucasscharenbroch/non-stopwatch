@@ -8,6 +8,8 @@ import { history, totalTicks } from '@/stores/trackingStore';
   <div>
     <h1>Data</h1>
     <SessionChart :history :total-ticks :sinks="prefSinks" />
+
+    <button @click="() => console.log(JSON.stringify(history))">Print json to console</button>
   </div>
 </template>
 
