@@ -15,7 +15,6 @@ const sinks: Sink[] = ['afk', 'work', 'play', 'meetings', 'coding', 'ricing'].ma
 const focusedSink = ref(sinks[0].name);
 
 const onTick = () => {
-  console.log('x', totalTicks.value);
   recordTick(focusedSink.value);
 };
 

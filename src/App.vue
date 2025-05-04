@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Navbar from './components/NavBar.vue';
-
 </script>
 
 <template>
@@ -11,5 +10,4 @@ import Navbar from './components/NavBar.vue';
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

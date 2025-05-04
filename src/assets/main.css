@@ -1,12 +1,12 @@
 :root {
-    --bg-color: #0d0d0d;
-    --text-color: #ffffff;
+  --bg-color: #0d0d0d;
+  --text-color: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
+    --bg-color: #ffffff;
+    --text-color: #000000;
   }
 }
 
