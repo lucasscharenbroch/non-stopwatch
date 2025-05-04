@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { formatTicksAsTime } from '@/utils/timeUtils';
 
-const props = defineProps<{ nTicks: number }>();
-
-const hours = computed(() => Math.floor(props.nTicks / 3600));
-const minutes = computed(() => Math.floor(props.nTicks / 60) % 60);
-const seconds = computed(() => props.nTicks % 60);
-
-const pad = (n: number) => n.toString().padStart(2, '0');
+const props = withDefaults(defineProps<{ nTicks: number; showSeconds?: boolean }>(), {
+  showSeconds: true,
+});
 </script>
 
 <template>
-  <p>{{ hours }}:{{ pad(minutes) }}:{{ pad(seconds) }}</p>
+  <p>{{ formatTicksAsTime(props.nTicks, props.showSeconds) }}</p>
 </template>
 
 <style scoped></style>

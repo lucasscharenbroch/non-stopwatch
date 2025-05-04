@@ -25,7 +25,7 @@ const { pause, resume, isActive } = useIntervalFn(onTick, 1000);
 <template>
   <SinkButtons :sinks v-model="focusedSink" />
   <StopwatchDisplay :n-ticks="totalTicks" />
-  <HistoryDisplay></HistoryDisplay>
+  <HistoryDisplay :max-entries="1"></HistoryDisplay>
 </template>
 
 <style scoped></style>
