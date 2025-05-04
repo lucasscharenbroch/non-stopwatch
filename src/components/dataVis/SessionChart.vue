@@ -11,14 +11,12 @@ import {
 } from 'chart.js';
 import { computed } from 'vue';
 import { type HistoryEntry } from '@/stores/trackingStore';
-import { DEFAULT_COLORS } from '@/utils/color';
 import type { Sink } from '@/models/sink';
 
 const props = defineProps<{ history: Array<HistoryEntry>; totalTicks: number; sinks: Sink[] }>();
 
 const sinkNameToColor = (sinkName: string) =>
-  props.sinks.find((sink) => sink.name === sinkName)?.colorHex ??
-  DEFAULT_COLORS[props.sinks.findIndex((sink) => sink.name === sinkName)];
+  props.sinks.find((sink) => sink.name === sinkName)?.colorHex ?? '#000000';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
