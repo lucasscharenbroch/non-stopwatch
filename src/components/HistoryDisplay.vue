@@ -4,6 +4,7 @@ import HistoryDisplayEntry from './HistoryDisplayEntry.vue';
 import { computed } from 'vue';
 import _ from 'lodash';
 import { formatTicksAsTime } from '@/utils/timeUtils';
+import { prefShowSeconds } from '@/stores/preferencesStore';
 
 const props = defineProps<{ maxEntries: number }>();
 
@@ -25,7 +26,7 @@ const collapsedTicks = computed(
   </ul>
   <details>
     <summary>
-      (... and {{ formatTicksAsTime(collapsedTicks, true) }} more across
+      (... and {{ formatTicksAsTime(collapsedTicks, prefShowSeconds) }} more across
       {{ collapsedHistoryEntries.length }} entries)
     </summary>
 
