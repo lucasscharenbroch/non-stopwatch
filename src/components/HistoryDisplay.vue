@@ -3,7 +3,7 @@ import { history, totalTicks } from '@/stores/trackingStore';
 import HistoryDisplayEntry from './HistoryDisplayEntry.vue';
 import { computed } from 'vue';
 import _ from 'lodash';
-import { formatTicksAsTime } from '@/utils/timeUtils';
+import { formatSecondsAsTime } from '@/utils/timeUtils';
 import { prefShowSeconds } from '@/stores/preferencesStore';
 
 const props = defineProps<{ maxEntries: number }>();
@@ -26,7 +26,7 @@ const collapsedTicks = computed(
     <li>
       <details>
         <summary>
-          (... and {{ formatTicksAsTime(collapsedTicks, prefShowSeconds) }} more across
+          (... and {{ formatSecondsAsTime(collapsedTicks, prefShowSeconds) }} more across
           {{ collapsedHistoryEntries.length }} entries)
         </summary>
 

@@ -12,3 +12,5 @@ export const prefSinks = useLocalStorage<Sink[]>(
     colorHex: DEFAULT_COLORS[i % DEFAULT_COLORS.length],
   })),
 );
+
+export const prefMsPerTick = useLocalStorage<number>('msPerTick', 1000);

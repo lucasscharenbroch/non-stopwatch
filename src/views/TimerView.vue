@@ -5,7 +5,7 @@ import SinkButtons from '@/components/SinkButtons.vue';
 import { useIntervalFn } from '@vueuse/core';
 import { recordTick, totalTicks } from '@/stores/trackingStore.ts';
 import HistoryDisplay from '@/components/HistoryDisplay.vue';
-import { prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
+import { prefMsPerTick, prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
 import StopwatchDisplay from '@/components/StopwatchDisplay.vue';
 
 const focusedSink = ref(prefSinks.value[0].name);
@@ -15,7 +15,7 @@ const onTick = () => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { pause, resume, isActive } = useIntervalFn(onTick, 1000);
+const { pause, resume, isActive } = useIntervalFn(onTick, prefMsPerTick.value);
 </script>
 
 <template>

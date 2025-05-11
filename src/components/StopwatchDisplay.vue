@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatTicksAsTime } from '@/utils/timeUtils';
+import { formatSecondsAsTime, ticksToSeconds } from '@/utils/timeUtils';
 
 const props = withDefaults(defineProps<{ nTicks: number; showSeconds?: boolean }>(), {
   showSeconds: true,
@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<{ nTicks: number; showSeconds?: boolean }
 </script>
 
 <template>
-  <p>{{ formatTicksAsTime(props.nTicks, props.showSeconds) }}</p>
+  <p>{{ formatSecondsAsTime(ticksToSeconds(props.nTicks), props.showSeconds) }}</p>
 </template>
 
 <style scoped></style>
