@@ -31,3 +31,5 @@ export const recordTicks = (sinkName: string, nTicks: number) => {
 };
 
 export const lastUpdateTime = ref(Date.now());
+
+export const lastFocusedSink = ref<undefined | string>();
