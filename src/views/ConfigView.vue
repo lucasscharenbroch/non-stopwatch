@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SinkEditor from '@/components/config/SinkEditor.vue';
-import { prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
+import { prefMsPerTick, prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
 </script>
 
 <template>
@@ -8,6 +8,11 @@ import { prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
 
   <input id="showSeconds" type="checkbox" v-model="prefShowSeconds" />
   <label for="showSeconds">Show Seconds</label>
+
+  <br />
+
+  <label for="msPerTick">Milliseconds Per update </label>
+  <input id="msPerTick" v-model="prefMsPerTick" />
 
   <SinkEditor v-model="prefSinks" />
 </template>

@@ -22,7 +22,6 @@ watch(focusedSink, () => {
 const update = () => {
   const now = Date.now();
   const msSinceLastUpdate = Date.now() - lastUpdateTime.value;
-  console.log(msSinceLastUpdate);
   lastUpdateTime.value = now;
 
   recordTicks(focusedSink.value, Math.floor(msSinceLastUpdate / prefMsPerTick.value));
