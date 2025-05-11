@@ -20,12 +20,14 @@ export const setMostRecentSink = (sinkName: string) => {
   }
 };
 
-const addTickToHistory = (sinkName: string) => {
+const addTicksToHistory = (sinkName: string, nTicks: number) => {
   setMostRecentSink(sinkName);
-  history.value[history.value.length - 1].nSeconds++;
+  history.value[history.value.length - 1].nSeconds += nTicks;
 };
 
-export const recordTick = (sinkName: string) => {
-  totalTicks.value++;
-  addTickToHistory(sinkName);
+export const recordTicks = (sinkName: string, nTicks: number) => {
+  totalTicks.value += nTicks;
+  addTicksToHistory(sinkName, nTicks);
 };
+
+export const lastUpdateTime = ref(Date.now());

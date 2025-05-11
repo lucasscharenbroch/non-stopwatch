@@ -3,19 +3,24 @@
 import { ref } from 'vue';
 import SinkButtons from '@/components/SinkButtons.vue';
 import { useIntervalFn } from '@vueuse/core';
-import { recordTick, totalTicks } from '@/stores/trackingStore.ts';
+import { lastUpdateTime, recordTicks, totalTicks } from '@/stores/trackingStore.ts';
 import HistoryDisplay from '@/components/HistoryDisplay.vue';
 import { prefMsPerTick, prefShowSeconds, prefSinks } from '@/stores/preferencesStore';
 import StopwatchDisplay from '@/components/StopwatchDisplay.vue';
 
 const focusedSink = ref(prefSinks.value[0].name);
 
-const onTick = () => {
-  recordTick(focusedSink.value);
+const update = () => {
+  const now = Date.now();
+  const msSinceLastUpdate = Date.now() - lastUpdateTime.value;
+  console.log(msSinceLastUpdate);
+  lastUpdateTime.value = now;
+
+  recordTicks(focusedSink.value, Math.floor(msSinceLastUpdate / prefMsPerTick.value));
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { pause, resume, isActive } = useIntervalFn(onTick, prefMsPerTick.value);
+const { pause, resume, isActive } = useIntervalFn(update, prefMsPerTick.value);
 </script>
 
 <template>
