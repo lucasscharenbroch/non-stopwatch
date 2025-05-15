@@ -22,9 +22,11 @@ watch(focusedSink, () => {
 const update = () => {
   const now = Date.now();
   const msSinceLastUpdate = Date.now() - lastUpdateTime.value;
-  lastUpdateTime.value = now;
+  const newTicks = Math.floor(msSinceLastUpdate / prefMsPerTick.value);
+  const remainder = msSinceLastUpdate - newTicks * prefMsPerTick.value;
+  lastUpdateTime.value = now - remainder;
 
-  recordTicks(focusedSink.value, Math.floor(msSinceLastUpdate / prefMsPerTick.value));
+  recordTicks(focusedSink.value, newTicks);
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
