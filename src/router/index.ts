@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createMemoryHistory, createRouter } from 'vue-router';
 
 import TimerView from '../views/TimerView.vue';
 import AboutView from '@/views/AboutView.vue';
@@ -13,6 +13,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory('non-stopwatch'),
+  history: createMemoryHistory('non-stopwatch'),
   routes,
 });
